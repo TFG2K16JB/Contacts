@@ -1,0 +1,31 @@
+<div class="bar">
+		<!-- Create a binding between the searchString model and the text field -->
+		<label>Search by name: <input ng-model="searchText.nombre"></label>
+</div>
+
+	<ul>
+		<!-- Render a li element for every entry in the items array. Notice
+			 the custom search filter "searchFor". It takes the value of the
+			 searchString model as an argument.
+		 -->
+		  <li ng-repeat="friend in contacts.contacts | filter:searchText:strict">
+			{{friend.nombre}}
+      {{friend.tel}}
+		</li>
+	</ul>
+
+  <div class="bar">
+  		<!-- Create a binding between the searchString model and the text field -->
+  		<label>Search by surname: <input ng-model="searchText2.apellido"></label>
+  </div>
+
+  	<ul>
+  		<!-- Render a li element for every entry in the items array. Notice
+  			 the custom search filter "searchFor". It takes the value of the
+  			 searchString model as an argument.
+  		 -->
+  		  <li ng-repeat="friend in contacts.contacts | filter:searchText2:strict">
+  			{{friend.apellido}}
+        {{friend.tel}}
+  		</li>
+  	</ul>
